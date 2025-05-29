@@ -1,31 +1,27 @@
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@heroui/react";
+import { useEffect } from 'react';
+import { useCookies } from 'react-cookie';
+import { v4 as uuidv4 } from 'uuid';
+
+import GameCarousel from './components/GameCarousel';
 
 export default function App() {
+  const [cookies, setCookie] = useCookies(['userId']);
+
+  useEffect(() => {
+    if (!cookies.userId) {
+      const newUserId = uuidv4();
+      console.log('New userId:', newUserId);
+      setCookie('userId', newUserId, {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365 * 2, // 2 years
+        sameSite: 'lax'
+      });
+    }
+  }, [cookies.userId, setCookie]);
+
   return (
-    <Card className="max-w-[400px]">
-      <CardHeader className="flex gap-3">
-        <Image
-          alt="heroui logo"
-          height={40}
-          radius="sm"
-          src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
-          width={40}
-        />
-        <div className="flex flex-col">
-          <p className="text-md">HeroUI</p>
-          <p className="text-small text-default-500">heroui.com</p>
-        </div>
-      </CardHeader>
-      <Divider />
-      <CardBody>
-        <p>Make beautiful websites regardless of your design experience.</p>
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <Link isExternal showAnchorIcon href="https://github.com/heroui-inc/heroui">
-          Visit source code on GitHub.
-        </Link>
-      </CardFooter>
-    </Card>
+    <div className='min-h-screen bg-steam-primary'>
+      <GameCarousel/>
+    </div>
   );
 }

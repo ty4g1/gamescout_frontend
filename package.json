@@ -11,14 +11,21 @@
   },
   "dependencies": {
     "@heroui/react": "^2.7.8",
+    "@react-spring/web": "^9.5.5",
     "framer-motion": "^12.15.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "motion": "^12.15.0",
+    "react": "^18.0.0",
+    "react-cookie": "^8.0.1",
+    "react-dom": "^18.0.0",
+    "react-image-gallery": "^1.4.0",
+    "react-tinder-card": "^1.6.4",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@types/react-image-gallery": "^1.2.4",
     "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.25.0",
