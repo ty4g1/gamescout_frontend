@@ -35,7 +35,7 @@ export default function GameModal({isOpen, onOpenChange, name, desc, tags}: Prop
   ]
   return (
     <div>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="bg-transparent text-white" backdrop="blur" shadow="none" >
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="bg-transparent text-white" backdrop="blur" shadow="none" size="full">
         <ModalContent>
           {() => (
             <>

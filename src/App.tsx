@@ -3,6 +3,11 @@ import { useCookies } from 'react-cookie';
 import { v4 as uuidv4 } from 'uuid';
 
 import GameCarousel from './components/GameCarousel';
+import Navbar from './components/Navbar';
+import TeemoSpinner from './components/TeemoSpinner';
+
+import backgroundImage from './assets/background.png'
+
 
 export default function App() {
   const [cookies, setCookie] = useCookies(['userId']);
@@ -20,7 +25,15 @@ export default function App() {
   }, [cookies.userId, setCookie]);
 
   return (
-    <div className='min-h-screen bg-steam-primary'>
+    <div 
+    className='relative min-h-screen'
+    style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      <Navbar/>
       <GameCarousel/>
     </div>
   );
