@@ -1,5 +1,5 @@
 export const patchApi = async <T>(endpoint: string, data: any): Promise<{data: T | null, error: string | null}> => {
-  const API_BASE_URL = 'http://localhost:8080'
+  const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:8080'
   const url = `${API_BASE_URL}${endpoint}`
   
   try {

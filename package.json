@@ -19,6 +19,7 @@
     "react-dom": "^18.0.0",
     "react-image-gallery": "^1.4.0",
     "react-tinder-card": "^1.6.4",
+    "serve": "^14.2.4",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
