@@ -1,6 +1,7 @@
 // utils/api.ts
+import { API_BASE_URL } from "./url"
+
 export const fetchApi = async <T>(endpoint: string): Promise<{data: T | null, error: string | null}> => {
-  const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:8080'
   const url = `${API_BASE_URL}${endpoint}`
   
   try {
